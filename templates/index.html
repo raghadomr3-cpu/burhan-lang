@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بُرهان</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/ayu-dark.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="logo-container">
+        <div class="logo-gem">💎</div>
+        <div class="logo-text">
+            <h1>بُرهان</h1>
+            <p>لغة البرمجة العربية</p>
+        </div>
+    </div>
+    <nav class="nav-menu">
+        <button class="nav-btn active" onclick="scrollToSection('hero')"><i class="fas fa-home"></i> الرئيسية</button>
+        <button class="nav-btn" onclick="scrollToSection('about')"><i class="fas fa-info-circle"></i> عن المشروع</button>
+        <button class="nav-btn" onclick="scrollToSection('docs')"><i class="fas fa-book"></i> الدليل</button>
+        <button class="nav-btn" onclick="scrollToSection('editor')"><i class="fas fa-code"></i> المحرر</button>
+    </nav>
+</header>
+
+<button class="btn-floating-modern" id="dynamic-btn" onclick="nextSection()">
+    <span class="btn-icon"><i class="fas fa-chevron-left"></i></span>
+    <span class="btn-text" id="btn-text">استكشف بُرهان</span>
+</button>
+
+<div class="horizontal-wrapper" id="main-slider">
+
+    <!-- الصفحة الرئيسية -->
+    <section id="hero" class="panel hero-section">
+        <div id="particles-container"></div>
+        <div class="hero-content">
+            <div class="hero-title-wrapper">
+                <h1 class="hero-title">
+                    <span class="title-gem">💎</span>
+                    <span class="title-text">بُرهان</span>
+                </h1>
+                <div class="title-underline"></div>
+            </div>
+            <p class="hero-subtitle">الاثبات الفعلي على ان البرمجة قابلة للتعريب</p>
+            <div class="hero-stats">
+                <div class="stat-card"><i class="fas fa-graduation-cap"></i><span>مشروع تخرج <strong>CIS</strong></span></div>
+                <div class="stat-card"><i class="fas fa-code"></i><span>برمجة باللغة <strong>العربية</strong></span></div>
+                <div class="stat-card"><i class="fas fa-rocket"></i><span>اداء <strong>متقدم</strong></span></div>
+            </div>
+            <div class="hero-cta">
+                <button class="btn-primary" onclick="scrollToSection('docs')"><i class="fas fa-book-open"></i> ابدا الان</button>
+                <button class="btn-secondary" onclick="scrollToSection('editor')"><i class="fas fa-play"></i> جرب برمج</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- عن المشروع -->
+    <section id="about" class="panel about-section">
+        <div class="about-content">
+            <h2 class="about-title">عن مشروع بُرهان</h2>
+            <div class="about-cards">
+                <div class="about-card glass-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>الرؤية</h3>
+                    <p>ان اللغة العربية تستطيع التعامل مع جميع جوانب البرمجة الحديثة. وتعريبها امر ممكن وقابل للتطوير مستقبلا. </p>
+                </div>
+                <div class="about-card glass-card">
+                    <i class="fas fa-user"></i>
+                    <h3>الهدف</h3>
+                <p> تمكين الناطقين بالعربية من تعلم البرمجة ومنطقها بلغتهم الام, وحل مشكلة الاغتراب الغوي لدى المتعلم العربي.</p>
+                </div>
+                <div class="about-card glass-card">
+                    <i class="fas fa-star"></i>
+                    <h3>الميزات</h3>
+                    <p>محرر متقدم مع دعم كامل للغة العربية، تلوين الكود، دعم العمليات الحسابية, والمقارنات, وتنفيذ فوري مع رسائل خطا عربية واضحة.</p>
+                </div>
+            </div>
+            <p class="about-footer">© 2026 <strong>رغد</strong> - جميع الحقوق محفوظة</p>
+        </div>
+    </section>
+
+    <!-- الدليل -->
+    <section id="docs" class="panel docs-section">
+        <h2 class="section-title">دليل لغة بُرهان الشامل</h2>
+        <p class="section-subtitle">كل ما تحتاج معرفته عن قواعد كتابة اللغة</p>
+
+        <div class="docs-grid">
+ 
+<!-- قواعد الكتابة -->
+<div class="doc-card glass-card">
+    <div class="card-header">
+        <i class="fas fa-pen-nib"></i>
+        <h3>قواعد الكتابة</h3>
+    </div>
+    <div class="card-body">
+        <div class="code-snippet">
+            <span style="color:#ff79c6">!! كل جملة تنتهي بنقطة</span><br>
+            <span class="kw">صحيح</span> س = <span class="num">5</span><span class="dot-s"> .</span><br>
+            <span style="color:#ff79c6">!! مسافة قبل النقطة مقبولة</span><br>
+            <span class="kw">اطبع</span> <span class="str">"مرحبا"</span><span class="dot-s"> .</span><br>
+            <span style="color:#ff79c6">!! الكلمات المفتاحية باللون الوردي</span>
+        </div>
+        <p class="card-desc">كل جملة يجب ان تنتهي بنقطة   </p>
+        <button class="btn-insert" onclick="useExample(`!! مثال على قواعد الكتابة\nصحيح س = 10 .\nاطبع &quot;القيمة: &quot; + س .`)">
+            <i class="fas fa-play"></i> جرب المثال
+        </button>
+    </div>
+</div>
+
+ <!-- التعليقات -->
+        <div class="doc-card glass-card">
+            <div class="card-header">
+                <i class="fas fa-comment-slash"></i>
+                <h3>التعليقات</h3>
+            </div>
+            <div class="card-body">
+                <div class="code-snippet">
+                    <span style="color:#6272a4">!! هذا تعليق لا يُنفَّذ</span><br>
+                    <span class="kw">صحيح</span> س = <span class="num">10</span><span class="dot-s">.</span><br>
+                    <span style="color:#6272a4">!! يمكن شرح الكود هنا</span><br>
+                    <span class="kw">اطبع</span> س<span class="dot-s">.</span>
+                </div>
+                <p class="card-desc">أي سطر يبدأ بـ !! يُعتبر تعليقاً ولا يؤثر على التنفيذ</p>
+                <button class="btn-insert" data-code='!! هذا تعليق
+صحيح س = 10 .
+!! نطبع قيمة س
+اطبع س .' onclick="useExample(this.dataset.code)">
+                    <i class="fas fa-play"></i> جرب المثال
+                </button>
+            </div>
+        </div>
+
+
+       
+
+            <div class="doc-card glass-card">
+                <div class="card-header">
+                    
+                    <i class="fas fa-cubes"></i>
+
+
+                    
+                    <h3>الانواع البيانية</h3>
+                </div>
+                <div class="card-body">
+                    <div class="code-snippet">
+                        <span class="kw">صحيح</span> س = <span class="num">10</span><span class="dot-s">.</span><br>
+                        <span class="kw">عشري</span> ص = <span class="num">3.14</span><span class="dot-s">.</span><br>
+                        <span class="kw">نص</span> اسم = <span class="str">"رغد"</span><span class="dot-s">.</span><br>
+                        <span class="kw">حرف</span> ح = <span class="str">'ص'</span><span class="dot-s">.</span><br>
+                        <span class="kw">ثنائي</span> علم = <span class="kw">صح</span><span class="dot-s">.</span>
+                    </div>
+                    <p class="card-desc">تعريف المتغيرات بانواعها المختلفة</p>
+                    <button class="btn-insert" data-code= 'صحيح س = 10 .
+ عشري ص = 3.14 .
+ نص اسم = "رغد" .
+ ثنائي علم = صح .
+ اطبع اسم .' onclick="useExample(this.dataset.code)">
+                        <i class="fas fa-play"></i> جرب المثال
+                    </button>
+                </div>
+            </div>
+
+            <div class="doc-card glass-card">
+                <div class="card-header">
+                    <i class="fas fa-print"></i>
+                    <h3>الطباعة والإخراج</h3>
+                </div>
+                <div class="card-body">
+                    <div class="code-snippet">
+                        <span class="kw">اطبع</span> <span class="num">10</span><span class="dot-s">.</span><br>
+                        <span class="kw">اطبع</span> <span class="str">"مرحبا بالعالم"</span><span class="dot-s">.</span><br>
+                        <span class="kw">اطبع</span> س<span class="dot-s">.</span>
+                    </div>
+                    <p class="card-desc">اخراج النتائج والرسائل للمستخدم</p>
+                    <button class="btn-insert" data-code= 'صحيح س = 10 . 
+اطبع "مرحبا بالعالم" .
+ اطبع س . ' onclick="useExample(this.dataset.code)">
+                    <i class="fas fa-play"></i> جرب المثال
+                    </button>
+                </div>
+            </div>
+
+            <div class="doc-card glass-card">
+                <div class="card-header">
+                    <i class="fas fa-calculator"></i>
+                    <h3>العمليات الحسابية</h3>
+                </div>
+                <div class="card-body">
+                    <div class="code-snippet">
+                        <span class="kw">صحيح</span> س = <span class="num">10</span><span class="dot-s">.</span><br>
+                        <span class="kw">صحيح</span> ص = <span class="num">3</span><span class="dot-s">.</span><br>
+                        <span class="kw">اطبع</span> س + ص<span class="dot-s">.</span><br>
+                        <span class="kw">اطبع</span> س * ص<span class="dot-s">.</span><br>
+                        <span class="kw">اطبع</span> س / ص<span class="dot-s">.</span>
+                    </div>
+                    <p class="card-desc">الجمع والطرح والضرب والقسمة</p>
+                    <button class="btn-insert" onclick="useExample('صحيح س = 10 .\nصحيح ص = 3 .\nاطبع س + ص .\nاطبع س * ص .')">
+                        <i class="fas fa-play"></i> جرب المثال
+                    </button>
+                </div>
+            </div>
+
+            <div class="doc-card glass-card">
+                <div class="card-header">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>الجمل الشرطية</h3>
+                </div>
+                <div class="card-body">
+                    <div class="code-snippet">
+                        <span class="kw">صحيح</span> س = <span class="num">7</span><span class="dot-s">.</span><br>
+                        <span class="kw">اذا</span> س > <span class="num">5</span><span class="dot-s">.</span><br>
+                        &nbsp;&nbsp;<span class="kw">اطبع</span> <span class="str">"اكبر من 5"</span><span class="dot-s">.</span><br>
+                        <span class="kw">نهاية</span><span class="dot-s">.</span>
+                    </div>
+                    <p class="card-desc">التحكم حسب الشروط</p>
+                    <button class="btn-insert" data-code= 'صحيح س = 7 . 
+اذا س >5 .
+اطبع "س اكبر من 5" .
+نهاية .' onclick="useExample(this.dataset.code)">
+                        <i class="fas fa-play"></i> جرب المثال
+                    </button>
+                </div>
+            </div>
+
+            <div class="doc-card glass-card">
+                <div class="card-header">
+                    <i class="fas fa-repeat"></i>
+                    <h3>حلقات التكرار</h3>
+                </div>
+                <div class="card-body">
+                    <div class="code-snippet">
+                        <span class="kw">صحيح</span> س = <span class="num">1</span><span class="dot-s">.</span><br>
+                        <span class="kw">بينما</span> س &lt;= <span class="num">3</span><span class="dot-s">.</span><br>
+                        &nbsp;&nbsp;<span class="kw">اطبع</span> س<span class="dot-s">.</span><br>
+                        &nbsp;&nbsp;س = س + <span class="num">1</span><span class="dot-s">.</span><br>
+                        <span class="kw">نهاية</span><span class="dot-s">.</span>
+                    </div>
+                    <p class="card-desc">تكرار العمليات حتى تتحقق شرط معينة</p>
+                    <button class="btn-insert" onclick="useExample('صحيح س = 1 .\nبينما س <= 3 .\n    اطبع س .\n    س = س + 1 .\nنهاية .')">
+                        <i class="fas fa-play"></i> جرب المثال
+                    </button>
+                </div>
+            </div>
+
+            <div class="doc-card glass-card">
+                <div class="card-header">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>عمليات المقارنة</h3>
+                </div>
+                <div class="card-body">
+                    <div class="code-snippet">
+                        <span class="kw">اطبع</span> <span class="num">5</span> == <span class="num">5</span><span class="dot-s">.</span><br>
+                        <span class="kw">اطبع</span> <span class="num">5</span> > <span class="num">3</span><span class="dot-s">.</span><br>
+                        <span class="kw">اطبع</span> <span class="num">5</span> &lt; <span class="num">3</span><span class="dot-s">.</span>
+                    </div>
+                    <p class="card-desc">مقارنة القيم والحصول على نتائج ثنائية</p>
+                    <button class="btn-insert" onclick="useExample('صحيح س = 5 .\nصحيح ص = 3 .\nاطبع س == ص .\nاطبع س > ص .')">
+                        <i class="fas fa-play"></i> جرب المثال
+                    </button>
+                </div>
+            </div>
+
+            <!-- كرر -->
+<div class="doc-card glass-card">
+    <div class="card-header">
+        <i class="fas fa-redo"></i>
+        <h3>حلقة كرر</h3>
+    </div>
+    <div class="card-body">
+        <div class="code-snippet">
+            <span class="kw">كرر</span> س <span class="kw">من</span> <span class="num">1</span> <span class="kw">الى</span> <span class="num">5</span><span class="dot-s">.</span><br>
+            &nbsp;&nbsp;<span class="kw">اطبع</span> س<span class="dot-s">.</span><br>
+            <span class="kw">نهاية</span><span class="dot-s">.</span>
+        </div>
+        <p class="card-desc">تكرار بعدد محدد من البداية للنهاية</p>
+        <button class="btn-insert" onclick="useExample('كرر س من 1 الى 5 .\n    اطبع س .\nنهاية .')">
+            <i class="fas fa-play"></i> جرب المثال
+        </button>
+    </div>
+</div>
+
+<!-- اختر -->
+<div class="doc-card glass-card">
+    <div class="card-header">
+        <i class="fas fa-list-ul"></i>
+        <h3>جملة اختر</h3>
+    </div>
+    <div class="card-body">
+        <div class="code-snippet">
+            <span class="kw">اختر</span> يوم<span class="dot-s">.</span><br>
+            &nbsp;&nbsp;<span class="kw">حالة</span> <span class="num">1</span><span class="dot-s">.</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">اطبع</span> <span class="str">"احد"</span><span class="dot-s">.</span><br>
+            &nbsp;&nbsp;<span class="kw">افتراضي</span><span class="dot-s">.</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">اطبع</span> <span class="str">" يوم اخر "</span><span class="dot-s">.</span><br>
+            <span class="kw">نهاية</span><span class="dot-s">.</span>
+        </div>
+        <p class="card-desc">اختيار حالة من عدة حالات</p>
+        <button class="btn-insert" data-code='صحيح يوم = 1 .
+اختر يوم .
+حالة 1 .
+اطبع "الاحد" .
+حالة 2 .
+اطبع "الاثنين" .
+افتراضي .
+اطبع "يوم اخر" .
+نهاية .' onclick="useExample(this.dataset.code)">
+        <i class="fas fa-play"></i> جرب المثال
+        </button>
+    </div>
+</div>
+
+<!-- شروط متعددة -->
+<div class="doc-card glass-card">
+    <div class="card-header">
+        <i class="fas fa-code-branch"></i>
+        <h3>شروط متعددة</h3>
+    </div>
+    <div class="card-body">
+        <div class="code-snippet">
+            <span class="kw">صحيح</span> س = <span class="num">7</span><span class="dot-s">.</span><br>
+            <span class="kw">اذا</span> س > <span class="num">5</span> <span class="kw">و</span> س < <span class="num">10</span><span class="dot-s">.</span><br>
+            &nbsp;&nbsp;<span class="kw">اطبع</span> <span class="str">"بين 5 و 10"</span><span class="dot-s">.</span><br>
+            <span class="kw">نهاية</span><span class="dot-s">.</span>
+        </div>
+        <p class="card-desc">دمج شرطين بـ و / أو</p>
+        <button class="btn-insert" data-code='صحيح س = 7 .
+اذا  س > 5 و س < 10. 
+    اطبع "س بين 5 و 10 " .
+    نهاية . ' onclick="useExample(this.dataset.code)">
+        <i class="fas fa-play"></i> جرب المثال
+        </button>
+    </div>
+</div>
+ 
+
+        </div>
+        <div class="docs-footer">
+            <p>© 2026 <strong>رغد</strong> - جميع الحقوق محفوظة | مشروع تخرج CIS</p>
+        </div>
+    </section>
+
+    <!-- المحرر -->
+    <section id="editor" class="panel editor-section">
+        <div class="editor-wrapper">
+
+            <!-- المحرر -->
+            <div class="editor-container glass-card">
+                <div class="editor-header">
+                    <div class="editor-title">
+                        <i class="fas fa-file-code"></i>
+                        <span>برهان.برنامج</span>
+                    </div>
+                    <div class="editor-actions">
+                        <button class="editor-btn" onclick="clearEditor()" title="مسح المحرر">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <textarea id="code" spellcheck="false"></textarea>
+            </div>
+
+            <!-- النتائج -->
+            <div class="output-container glass-card">
+                <div class="output-header">
+                    <div class="output-title">
+                        <i class="fas fa-terminal"></i>
+                        <span>الناتج</span>
+                    </div>
+                    <div class="status-indicator" id="status-dot"></div>
+                </div>
+                <div id="output-content">
+                    <pre id="output">انتظار البرهان...
+                    </pre>
+                </div>
+                <div class="output-actions">
+                    <button class="btn-run" onclick="runCode()">
+                        <i class="fas fa-play"></i>
+                        <span>تشغيل الكود</span>
+                        <span class="btn-shortcut">(Ctrl+Enter)</span>
+                    </button>
+                    <button class="btn-clear-output" onclick="clearTerminal()">
+                        <i class="fas fa-broom"></i> مسح
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="editor-footer">
+            <p>© 2026 <strong>رغد</strong> - جميع الحقوق محفوظة | مشروع تخرج CIS</p>
+        </div>
+    </section>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/mode/simple.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
