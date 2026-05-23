@@ -2,7 +2,7 @@
 :root {
     --bg-deep: #0a0a0f;
     --bg-darker: #0f0f1a;
-    --bg-light: #1a1a2e;
+    --bg-light: #25253c;
     --accent-primary: #7c4dff;
     --accent-secondary: #b19cd9;
     --accent-hover: #9e7aff;
@@ -125,7 +125,7 @@ html, body {
     box-shadow: 0 12px 35px rgba(124,77,255,0.6);
 }
 
-/* المسطح الافقي  */
+/* التمرير الافقي  */
 .horizontal-wrapper {
     display: flex;
     width: 100vw;
