@@ -203,7 +203,13 @@ html, body {
     }
 }
 
-.title-gem { font-size: 5.5rem; animation: gemFloat 3s ease-in-out infinite; }
+.title-gem {
+    font-size: 5rem;
+    color: var(--accent-primary);
+    animation: gemFloat 3s ease-in-out infinite;
+        -webkit-text-fill-color: var(--accent-primary);
+
+}
 @keyframes gemFloat {
     0%, 100% { transform: translateY(0) rotate(0deg); }
     50% { transform: translateY(-15px) rotate(10deg); }
@@ -251,7 +257,7 @@ html, body {
 .stat-card:hover {
     background: var(--glass-medium);
     border-color: var(--accent-primary);
-    transform: translateY(-4px);
+
 }
 .stat-card i { font-size: 1.2rem; color: var(--accent-primary); }
 .btn-primary {
@@ -663,3 +669,4 @@ textarea#code { display: none; }
     direction: rtl !important;
     padding-right: 10px !important;
 }
+
