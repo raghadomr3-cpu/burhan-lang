@@ -66,7 +66,7 @@ class Lexer:
                     self.pos += 1
                     self.tokens.append(Token("CHAR", char_val, self.line))
                 else:
-                    raise Exception(f"خطا في السطر {self.line}: حرف مفتوح بدون إغلاق، أضيفي ' في النهاية")
+                    raise Exception(f"خطا في السطر {self.line}: حرف مفتوح بدون اغلاق، اضف ' في النهاية")
                 continue
 
             # الارقام الصحيحة والعشرية
