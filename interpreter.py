@@ -50,7 +50,7 @@ class Interpreter:
                     loop_count = 0
                     while self.evaluate(node.condition):
                         loop_count += 1
-                        if loop_count > 10000:
+                        if loop_count > 1000:
                             raise Exception("خطا: حلقة لا نهائية — تاكد من الشرط داخل الحلقة")
                         self.run(node.body)
 
